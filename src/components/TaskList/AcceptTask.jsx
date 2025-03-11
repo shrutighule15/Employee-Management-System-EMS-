@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import "./AcceptTask.css";
 import { AuthContext } from "../../context/AuthProvide";
 
-const AcceptTask = ({ data }) => {
+const AcceptTask = ({ data, taskTitle }) => {
   const { userData, setUserData } = useContext(AuthContext);
   const [taskStatus, setTaskStatus] = useState("active");
   const [taskCompleted, setTaskCompleted] = useState(false);
@@ -10,9 +10,10 @@ const AcceptTask = ({ data }) => {
 
   useEffect(() => {
     // Check the stored task statuses from localStorage to sync the status
-    const completedTasks = JSON.parse(localStorage.getItem("completedTasks")) || {};
+    const completedTasks =
+      JSON.parse(localStorage.getItem("completedTasks")) || {};
     const failedTasks = JSON.parse(localStorage.getItem("failedTasks")) || {};
-  
+
     if (completedTasks[data.taskTitle]) {
       setTaskStatus("completed");
     } else if (failedTasks[data.taskTitle]) {
@@ -28,17 +29,19 @@ const AcceptTask = ({ data }) => {
         return {
           ...user,
           tasks: user.tasks.map((task) =>
-            task.taskTitle === data.taskTitle
+            task.taskTitle === taskTitle
               ? {
                   ...task,
+                  active: false,
+                  newTask: false,
                   completed: true,
-                  failed: false, // Ensure fail state is reset
+                  failed: false,
                 }
               : task
           ),
           taskNumber: {
-            active: Math.max((user.taskNumber.active || 0) - 1, 0),
-            completed: (user.taskNumber.completed || 0) + 1,
+            active: user.taskNumber.active || 0,
+            completed: user.taskNumber.completed || 0,
             failed: user.taskNumber.failed || 0,
             newTask: user.taskNumber.newTask || 0,
           },
@@ -51,7 +54,8 @@ const AcceptTask = ({ data }) => {
     localStorage.setItem("employees", JSON.stringify(updatedUserData));
 
     // Save task state to localStorage for persistence
-    const storedTasks = JSON.parse(localStorage.getItem("completedTasks")) || {};
+    const storedTasks =
+      JSON.parse(localStorage.getItem("completedTasks")) || {};
     storedTasks[data.taskTitle] = "completed"; // Mark as completed
     localStorage.setItem("completedTasks", JSON.stringify(storedTasks));
 
@@ -65,18 +69,20 @@ const AcceptTask = ({ data }) => {
         return {
           ...user,
           tasks: user.tasks.map((task) =>
-            task.taskTitle === data.taskTitle
+            task.taskTitle === taskTitle
               ? {
                   ...task,
+                  active: false,
+                  newTask: false,
                   completed: false,
-                  failed: true, // Mark as failed
+                  failed: true,
                 }
               : task
           ),
           taskNumber: {
-            active: Math.max((user.taskNumber.active || 0) - 1, 0),
+            active: user.taskNumber.active || 0,
             completed: user.taskNumber.completed || 0,
-            failed: (user.taskNumber.failed || 0) + 1,
+            failed: user.taskNumber.failed || 0,
             newTask: user.taskNumber.newTask || 0,
           },
         };
