@@ -1,0 +1,23 @@
+/* Apply to whole page */
+html,
+body {
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-y: scroll; /* Allow vertical scroll */
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 50px; /* Fix spacing from all sides */
+  box-sizing: border-box;
+  background-color: #f8f9fa; /* Light background for a clean look */
+}
+
+/* Ensure all elements stay inside */
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+/* Hide scrollbar for Chrome, Safari & Edge */
+::-webkit-scrollbar {
+  width: 0px; /* Make scrollbar width 0 */
+  background: transparent; /* Optional: Make it transparent */
+}

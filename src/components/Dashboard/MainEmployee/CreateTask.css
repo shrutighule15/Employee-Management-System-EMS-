@@ -1,0 +1,64 @@
+/* Form */
+.task-form {
+  width: 800px;
+  background-color: #2e2e2e;
+  padding: 40px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 20px;
+}
+
+/* Form Group */
+.form-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.form-group label {
+  flex: 0 0 100px;
+  text-align: left;
+  color: #fff;
+  font-size: 16px;
+}
+
+/* Input Fields */
+.form-input,
+.form-textarea {
+  flex: 1;
+  padding: 10px;
+  background-color: #333;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  color: #fff;
+}
+
+/* Textarea */
+.form-textarea {
+  min-height: 50px;
+}
+
+/* Submit Button */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.create-task-button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 300px;
+  margin-top: 30px;
+}
+
+.create-task-button:hover {
+  background-color: #218838;
+}

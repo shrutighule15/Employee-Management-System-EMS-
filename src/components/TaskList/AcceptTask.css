@@ -1,0 +1,83 @@
+.first-box {
+  flex: 0 0 300px;
+  height: 300px;
+  background-color: #ffdab9; /* Keep the same color */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.box-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.high {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333; /* Keep the same color */
+}
+
+.date {
+  font-size: 14px;
+  color: #333; /* Keep the same color */
+}
+
+.box-heading {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333; /* Keep the same color */
+  margin-bottom: 10px;
+}
+
+.box-description {
+  font-size: 14px;
+  color: #333; /* Keep the same color */
+}
+/* Button Container */
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Adds space between the buttons */
+  margin-top: 20px;
+}
+
+/* Completed Button */
+.complete {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.complete:hover {
+  background-color: #218838;
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Failed Button */
+.fail {
+  background-color: #ff7f00; /* Orange color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.fail:hover {
+  background-color: #e67e22; /* Darker orange on hover */
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}

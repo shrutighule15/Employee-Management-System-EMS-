@@ -1,0 +1,32 @@
+/* Ensure full-page layout */
+.dashboard-container {
+  display: flex;
+  flex-direction: column; /* Header stays on top */
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  padding-top: 50px;
+  margin: 0; /* Remove any extra margin */
+}
+
+/* Flexbox layout for middle & last sections */
+.content {
+  display: flex;
+  flex-direction: row; /* Side-by-side layout */
+  justify-content: center; /* Center content properly */
+  align-items: stretch; /* 👈 Ensures both containers stretch to the same height */
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+/* CreateTask & AllTask take equal space */
+.create-task-container,
+.all-task-container {
+  min-width: 65%;
+  padding: 20px;
+  border-radius: 12px;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,21 @@
+/* Button Container */
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.status-fail {
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #f44336;
+  color: white;
+  border-radius: 30px;
+  display: inline-block;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.status-fail:hover {
+  background-color: #e53935;
+}

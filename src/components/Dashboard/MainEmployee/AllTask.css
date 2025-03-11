@@ -1,0 +1,97 @@
+.task-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #f4f4f9; /* Neutral light gray background */
+  padding: 0 20px 0px 20px;
+  border-radius: 8px;
+  color: #333; /* Neutral dark gray for text */
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.task-container h1 {
+  font-size: 32px; /* Bigger and more noticeable */
+  font-weight: bold;
+  text-align: center;
+  color: #ff6b6b;
+  margin-bottom: 20px;
+  margin-top: -40px;
+  letter-spacing: 1px;
+}
+.task-container h1::before {
+  content: "🚀 "; /* Rocket emoji for a powerful look */
+}
+
+.task-container h1::after {
+  content: " 👨‍💼"; /* Employee emoji to match the theme */
+}
+
+/* Table Header */
+.heading-task {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 1fr 1fr; /* Table-like layout */
+  gap: 10px;
+  align-items: center;
+  background-color: #dfe4ea; /* Light neutral gray */
+  padding: 15px;
+  border-radius: 4px 4px 0 0;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  color: #2f3640; /* Dark neutral gray for header text */
+  border: 1px solid #ced6e0; /* Subtle border for structure */
+}
+
+/* Task List Rows */
+.task-list {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 1fr 1fr; /* Same layout as the header */
+  gap: 10px;
+  align-items: center;
+  padding: 15px;
+  font-size: 16px;
+  text-align: center;
+  color: #333;
+  border-left: 1px solid #ced6e0;
+  border-right: 1px solid #ced6e0;
+  border-bottom: 1px solid #ced6e0;
+  background-color: #f4f4f9; /* Neutral background for rows */
+  transition: background-color 0.3s ease;
+}
+
+/* Alternating Row Colors */
+.task-list:nth-child(odd) {
+  background-color: #e8f0fe; /* Light blue for odd rows */
+}
+
+.task-list:nth-child(even) {
+  background-color: #fef6e8; /* Soft peach for even rows */
+}
+
+/* Hover Effect */
+.task-list:hover {
+  background-color: #dcdde1; /* Neutral light gray on hover */
+  color: #2f3640; /* Dark gray for better contrast */
+  transform: scale(1.02); /* Slight scale effect */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Task Columns - Styling Specific Columns */
+.task-list h3 {
+  font-weight: bold;
+  color: #3742fa; /* Bright blue for Employee Name */
+}
+
+.task-list h4 {
+  color: #ff4757; /* Bright red for New Task */
+}
+
+.task-list h5 {
+  color: #ffa502; /* Vibrant orange for statuses */
+}
+
+/* Task Container Bottom Rounding */
+.task-container > div:last-child .task-list:last-child {
+  border-radius: 0 0 4px 4px; /* Round the bottom row */
+}
